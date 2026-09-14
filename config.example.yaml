@@ -1,0 +1,14 @@
+logging: info
+
+mqtt_server: core-mosquitto
+mqtt_port: 1883
+mqtt_username: user
+mqtt_password: pass
+mqtt_topic: fritz2mqtt
+
+update_rate: 60
+
+fritz_address: 192.168.178.1
+fritz_user: user
+fritz_password: pass
+fritz_timeout: 10.0

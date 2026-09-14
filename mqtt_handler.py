@@ -37,10 +37,10 @@ class MqttHandler:
             username: str = ha_config['username']
             password: str = ha_config['password']
         else:
-            self.host: str = config['server']
-            self.port: int = config.get('port', 1883)
-            username: str = config['username']
-            password: str = config['password']
+            self.host: str = config['mqtt_server']
+            self.port: int = config.get('mqtt_port', 1883)
+            username: str = config['mqtt_username']
+            password: str = config['mqtt_password']
         logging.info('mqtt: connecting to %s:%s as %s.', self.host, self.port, username)
         self.topic_prefix: str = config.get('mqtt_topic', 'fritz2mqtt').rstrip('/') + '/'
 
