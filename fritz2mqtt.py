@@ -49,7 +49,8 @@ class Fritz2Mqtt:
             return None
         http = self.fc.http_interface
         sid = next(http._get_sid())
-        response = self.fc.session.post(f"{http.router_url}/data.lua", data={"sid": sid, "page": "fiberFiber"})
+        response = self.fc.session.post(f"{http.router_url}/data.lua", data={"sid": sid, "page": "fiberFiber"},
+                                        timeout=self.fritz_timeout)
         response.raise_for_status()
         data = response.json()
         properties = data.get("data", {}).get("sfpProperties", [])

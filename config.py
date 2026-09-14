@@ -37,9 +37,7 @@ def get_first_config() -> dict:
             else:
                 options: dict = get_config_local(options_file)
             for key, option in options.items():
-                if isinstance(option, str) and option:
-                    loaded_config[key] = option
-                elif isinstance(option, int) or isinstance(option, bool):
+                if option is not None:
                     loaded_config[key] = option
             break
     return loaded_config
