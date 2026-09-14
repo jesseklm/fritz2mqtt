@@ -1,0 +1,9 @@
+[project]
+name = "fritz2mqtt"
+version = "0.0.1"
+requires-python = ">=3.13"
+dependencies = [
+    "fritzconnection==1.15.1",
+    "gmqtt==0.7.0",
+    "pyyaml==6.0.3",
+]
